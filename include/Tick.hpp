@@ -1,21 +1,15 @@
-#ifndef TICK_H
-#define TICK_H 1
+#pragma once
 
-class Tick{
-public:
+#include "common.h"
 
-	long double open;
-	long double low;
-	long double close;
-	long double high;
-	long double adjust_close;
-	long int volume;
-	long int time;
+struct Tick {
+  REAL open;
+  REAL low;
+  REAL close;
+  REAL high;
+  REAL adjust_close;
+  INT volume;
+  INT time;
 
-	void dump();
+  void dump();
 };
-
-
-
-#endif
-

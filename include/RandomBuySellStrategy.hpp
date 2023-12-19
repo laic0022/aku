@@ -1,6 +1,8 @@
+#pragma once
+
 #include "Strategy.hpp"
 
-class RandomBuySellStrategy: public Strategy{
+class RandomBuySellStrategy : public Strategy {
 public:
-	Trade processTick(Tick t);
+  Trade processTick(Tick t);
 };

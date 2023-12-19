@@ -1,12 +1,8 @@
-#ifndef CURR_CONVERT
-#define CURR_CONVERT 1
+#pragma once
+#include "common.h"
 
 class CurrencyConversions {
 public:
-	static void removeCommasfromCurrency(std::string &str);
-	static long double stodpre(std::string const &str, std::size_t const p);
+  static void removeCommasFromCurrency(std::string &str);
+  static REAL readWithPrecision(std::string const &str, std::size_t const p);
 };
-
-#endif
-
-

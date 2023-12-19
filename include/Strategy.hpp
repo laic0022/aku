@@ -1,12 +1,8 @@
-#ifndef STRATEGY_HPP
-#define STRATEGY_HPP 1
+#pragma once
 
 #include "TradeManager.hpp"
 
-class Strategy{
+class Strategy {
 public:
-	virtual Trade processTick(Tick t) = 0;
+  virtual Trade processTick(Tick t) = 0;
 };
-
-
-#endif

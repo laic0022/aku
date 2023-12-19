@@ -1,0 +1,52 @@
+1. File Input Error:
+
+tick_manager = new YahooFinanceFileTickManager(input_file);
+
+Potential Exception: std::ios_base::failure or related file I/O exception.
+Error Message: "Error opening or reading input file: <file_path>."
+Possible Causes: Incorrect file path, insufficient file permissions, or corrupted file.
+Exception Handling: Wrap the file-related code in a try-catch block and handle the exception appropriately, for example, by providing a meaningful error message and terminating the program or falling back to default values.
+
+2. Memory Allocation Error:
+
+tick_manager = new YahooFinanceFileTickManager(input_file);
+strategy = new SmaStrategy();
+virtual_bank = new VirtualBank(bank_balance);
+trade_manager = new PaperTradeManager(virtual_bank);
+
+Potential Exception: std::bad_alloc or related memory allocation exception.
+Error Message: "Failed to allocate memory."
+Possible Causes: Insufficient memory available.
+Exception Handling: Wrap the memory allocation code in a try-catch block and handle the exception appropriately, such as logging an error and terminating the program.
+
+3. Null Pointer Dereference:
+
+TradeManager *trade_manager;
+// ...
+trade_manager->performTrade(tr);
+
+Potential Exception: Segmentation fault (accessing a null or uninitialized pointer).
+Error Message: "Segmentation fault (core dumped)."
+Possible Causes: Failure to initialize the trade_manager pointer.
+Exception Handling: Ensure that trade_manager is properly initialized before using it.
+
+4. Array Index Out of Bounds:
+
+Trade tr = strategy->processTick(t);
+trade_manager->performTrade(tr);
+
+Potential Exception: std::out_of_range or undefined behavior.
+Error Message: "Array index out of bounds" or similar.
+Possible Causes: Incorrect indexing or iteration beyond the bounds of a data structure.
+Exception Handling: Ensure proper bounds checking or use iterators to prevent accessing elements beyond the valid range.
+
+5. Tick Processing Error:
+
+Trade tr = strategy->processTick(t);
+trade_manager->performTrade(tr);
+
+
+Potential Exception: Custom exceptions or errors related to the logic inside the processTick method of the strategy object.
+Error Message: "Error processing tick: <specific_error_message>."
+Possible Causes: Logical errors, unexpected conditions, or external dependencies failing within the processTick method.
+Exception Handling: Add custom exception handling within the processTick method or catch specific exceptions here. You may log the error, set default values, or terminate the program based on the severity of the error.

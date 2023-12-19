@@ -1,14 +1,13 @@
-#ifndef VIRTUAL_BANK_HPP
-#define VIRTUAL_BANK_HPP 1
+#pragma once
 
-class VirtualBank{
+#include "common.h"
+
+class VirtualBank {
 public:
-	long double totalBalance;
-	bool bankCredit(long double);
-	bool bankDebit(long double);
-	bool bankCanDebit(long double);
-	VirtualBank(long double);
-	long double getBankBalance();
+  REAL totalBalance;
+  bool bankCredit(REAL);
+  bool bankDebit(REAL);
+  bool bankCanDebit(REAL);
+  VirtualBank(REAL);
+  REAL getBankBalance();
 };
-
-#endif

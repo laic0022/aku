@@ -1,4 +1,4 @@
-#include "Tick.hpp"
+#include "../include/Tick.hpp"
 #include <iostream>
 
 void Tick::dump() {

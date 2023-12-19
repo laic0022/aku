@@ -1,17 +1,16 @@
-#include "RandomTickManager.hpp"
+#include "../include/RandomTickManager.hpp"
 #include <cstdlib>
 #include <iostream>
-#include <time.h>
+#include <random>
 
 int RandomTickManager::genRandomInt() {
-  srand(time(NULL));
-  return rand();
+  // srand(time(NULL));
+  return distribution_int(generator);
 }
 
 float RandomTickManager::genRandomFloat() {
-  srand(time(NULL));
-  float r = static_cast<float>(rand());
-  return r;
+  // float r = static_cast<float>(rand());
+  return distribution_double(generator);
 }
 
 Tick RandomTickManager::getNextTick(Tick last_tick) {
